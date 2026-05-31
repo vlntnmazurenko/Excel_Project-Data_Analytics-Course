@@ -49,14 +49,14 @@ I created a PivotTable based on the data model built in Power Pivot and organize
 ### 🧮 DAX Measures
 To calculate median salaries, I created custom DAX measures, including:   
 
-`Median Salary:= MEDIAN(data_jobs_all[salary_year_avg])`  
+`Median Salary:= MEDIAN(data_jobs_salary[salary_year_avg])`  
 
 and a measure specifically for United States positions:  
 
 `Median Salary USA:=
 CALCULATE(
-    MEDIAN(data_jobs_all[salary_year_avg]),
-    data_jobs_all[job_country] = "United States"
+    MEDIAN(data_jobs_salary[salary_year_avg]),
+    data_jobs_salary[job_country] = "United States"
 )`  
 
 and a measure specifically for non United States positions:  
@@ -71,3 +71,48 @@ and a measure specifically for non United States positions:
 
   <img width="914" height="285" alt="Снимок экрана 2026-05-31 143344" src="https://github.com/user-attachments/assets/fbea4c1b-b460-4a74-9b55-2de9ac782f7f" />
 
+## 3. Which skills are most commonly required for data professionals?
+To identify the skills most frequently requested in data-related roles, I used Power Pivot to build a relational data model and analyze skill demand across job postings.
+### 💪 Power Pivot & Data Modeling
+After cleaning and preparing the datasets in Power Query, I loaded them into Power Pivot and created a data model by connecting:
+- data_jobs_salary – job posting information
+- data_jobs_skills – skills associated with each job posting
+
+  <img width="1004" height="452" alt="Снимок экрана 2026-05-31 143756" src="https://github.com/user-attachments/assets/205e168e-d226-468d-b032-dae9400616fd" />
+
+### 🔗 Building Relationships
+I established a relationship between the two tables using the job_id field, allowing me to combine job and skill information within a single analytical model.
+### Key Insights
+- 💻 SQL and Python emerged as the most frequently requested skills across data-related roles, highlighting their importance as core competencies for data professionals.
+- 📊 Data visualization and business intelligence tools, such as Power BI and Tableau, also appear frequently, demonstrating the growing demand for professionals who can communicate insights effectively.
+- ☁️ Cloud platforms, including AWS and Azure, show strong demand, reflecting the increasing adoption of cloud-based data infrastructure and analytics solutions.
+- 🤖 Modern data roles often require a combination of programming, analytical, and cloud skills, indicating that employers value well-rounded professionals who can work across the entire data lifecycle.
+- 🚀 The results suggest that developing expertise in SQL, Python, and cloud technologies can significantly improve career opportunities in the data industry.
+
+  <img width="886" height="360" alt="Снимок экрана 2026-05-31 143926" src="https://github.com/user-attachments/assets/f0ab63eb-15d1-434e-b014-110875734ccf" />
+
+## 4. What salary levels are associated with the most in-demand skills?
+To compare the earning potential of the most in-demand skills, I used a PivotChart that combines salary information with skill demand metrics.
+### 📈 Data Visualization
+I created a combo PivotChart based on my PivotTable to visualize two key metrics simultaneously:
+- Median Salary displayed as a clustered column chart
+- Skill Likelihood (%) displayed as a line chart on a secondary axis  
+This visualization made it possible to compare not only how often a skill appears in job postings, but also the salary levels associated with that skill.
+### 🎨 Chart Customization
+To improve readability and presentation, I:
+- Added chart and axis titles
+- Customized chart formatting
+- Modified marker styles for the skill likelihood line
+- Simplified the visual design to emphasize key insights
+### 💡 Key Insights
+- 💰 Skills such as Python and SQL are associated with some of the highest median salaries, highlighting their importance in technical and data-driven roles.
+- 📈 Highly valued technical skills tend to combine strong market demand with above-average salary levels, making them particularly attractive for career development.
+- ☁️ Specialized data and database technologies generally offer greater earning potential than general business software skills.
+- 📉 Skill such as Excel shows both lower demand and lower median salaries, suggesting that this tool is often considered complementary skill rather than core requirement for high-paying data positions.
+🎯 The analysis indicates that investing in technical, analytical, and database-related skills is more likely to lead to higher-paying opportunities within the data industry.
+
+<img width="910" height="362" alt="Снимок экрана 2026-05-31 144601" src="https://github.com/user-attachments/assets/304b8309-e944-4648-8432-fbe9ca6f03cc" />
+
+## Conclusion
+Throughout this project, I explored key trends in the data science job market, including salary differences across regions, the relationship between skills and compensation, the most in-demand technologies, and the earning potential of top skills.  
+By completing this analysis, I strengthened my Excel expertise and gained hands-on experience with Power Query, Power Pivot, DAX, PivotTables, PivotCharts, data cleaning, data modeling, and data visualization. The project also improved my ability to transform raw data into actionable insights and communicate findings through interactive reports and dashboards.
