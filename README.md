@@ -41,3 +41,33 @@ To ensure data quality and consistency, I performed several cleaning and transfo
 - 🎯 The findings indicate that investing in additional technical skills can increase earning potential and create access to more specialized, higher-paying opportunities within the data industry.
 
   <img width="707" height="389" alt="Снимок экрана 2026-05-31 140820" src="https://github.com/user-attachments/assets/2ca23723-85f1-4568-8ceb-cba1f106aa47" />
+
+## 2. How do salaries for data-related roles vary across different regions?
+To compare salary levels between the United States and other countries, I used PivotTables, Power Pivot, and DAX measures to analyze median salaries across different data-related roles.
+### 📊 PivotTable Analysis
+I created a PivotTable based on the data model built in Power Pivot and organized the data by job title. To provide a more reliable comparison, I focused on median salary rather than average salary, as it is less affected by extreme values.
+### 🧮 DAX Measures
+To calculate median salaries, I created custom DAX measures, including:   
+
+`Median Salary:= MEDIAN(data_jobs_all[salary_year_avg])`  
+
+and a measure specifically for United States positions:  
+
+`Median Salary USA:=
+CALCULATE(
+    MEDIAN(data_jobs_all[salary_year_avg]),
+    data_jobs_all[job_country] = "United States"
+)`  
+
+and a measure specifically for non United States positions:  
+
+`Median Salary Non USA:=CALCULATE([Median Salary]; data_jobs_salary[job_country]<>"United States")`  
+
+### Key Insights
+- 💼 Senior Data Engineer and Data Scientist roles consistently show the highest median salaries, both within the United States and internationally, highlighting the strong global demand for advanced data expertise.
+- 🌍 Salaries for data-related positions are generally higher in the United States compared to other regions, particularly for highly technical roles.
+- 💰 The largest salary gaps between US and non-US markets appear in specialized positions, suggesting that factors such as market maturity, industry concentration, and demand for advanced technical skills may significantly influence compensation levels.
+- 📈 Across all regions, technical and data-focused roles tend to command higher salaries than more business-oriented positions, reflecting the growing value of analytical and engineering expertise in the job market.
+
+  <img width="914" height="285" alt="Снимок экрана 2026-05-31 143344" src="https://github.com/user-attachments/assets/fbea4c1b-b460-4a74-9b55-2de9ac782f7f" />
+
