@@ -14,3 +14,30 @@ During this project, I strengthened and applied the following Excel skills:
 - 🧮 DAX (Data Analysis Expressions) for advanced calculations
 - 🔍 Power Query for data cleaning and transformation
 - 💪 Power Pivot for data modeling and relationship management
+## 1. Does possessing a broader skill set lead to higher salaries?
+To answer this question, I used Power Query to perform the ETL (Extract, Transform, Load) process and prepare the dataset for analysis.
+### 📥 Data Extraction
+I imported the original dataset (data_salary_all.xlsx) into Power Query and created two separate queries:
+- data_jobs_salary – containing information about data-related positions, salaries, and locations.
+- data_jobs_skills – containing the skills associated with each job posting.
+### 🔄 Data Transformation
+To ensure data quality and consistency, I performed several cleaning and transformation steps:
+- Adjusted data types for relevant columns
+- Removed unnecessary fields
+- Cleaned text values by removing unwanted words and characters
+- Trimmed extra whitespace
+- Prepared the data for further analysis and reporting
+  - data_jobs_salary  
+
+    <img width="1683" height="827" alt="Снимок экрана 2026-05-31 140319" src="https://github.com/user-attachments/assets/5beaf5e0-76ae-40fa-9cbd-e38a718bc5a8" />
+        
+  - data_jobs_skills  
+
+    <img width="1694" height="822" alt="Снимок экрана 2026-05-31 140341" src="https://github.com/user-attachments/assets/89321aa4-3ce7-4f24-9b81-2dc537e89b31" />
+
+### Key Insights
+- 📈 The analysis revealed a positive relationship between the number of skills required in job postings and median salary levels. Roles such as Senior Data Engineer and Data Scientist, which typically demand a broader and more specialized skill set, tend to offer higher compensation.
+- 💼 Positions with lower skill requirements, such as Business Analyst, generally show lower median salaries. This suggests that employers place a premium on candidates with diverse technical expertise and advanced analytical capabilities.
+- 🎯 The findings indicate that investing in additional technical skills can increase earning potential and create access to more specialized, higher-paying opportunities within the data industry.
+
+  <img width="707" height="389" alt="Снимок экрана 2026-05-31 140820" src="https://github.com/user-attachments/assets/2ca23723-85f1-4568-8ceb-cba1f106aa47" />
